@@ -125,7 +125,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section class="relative pt-32 pb-20 lg:pt-30 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 hero-pattern opacity-10"></div>
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-transparent via-unity-dark to-unity-dark pointer-events-none">
@@ -170,15 +170,6 @@
                 <!-- Main Visual -->
                 <img src="img/sc2.png" alt="GridSnapper Interface"
                     class="w-full object-cover group-hover:scale-105 transition-transform duration-700">
-
-                <!-- Play Button Overlay (Optional) -->
-                <div
-                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div
-                        class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                        <i class="fa-solid fa-play text-white ml-1"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -189,57 +180,49 @@
             <div class="text-center mb-16">
                 <h2 class="text-base text-unity-action font-semibold tracking-wide uppercase">Features</h2>
                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
-                    Speed Up Your Workflow
+                    Everything You Need
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
-                    GridSnapper is designed to turn complex level design into a fun and rapid process.
+                    A comprehensive toolset designed to solve your alignment problems instantly.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Feature 1 -->
-                <div
-                    class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
-                    <div
-                        class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-unity-action/10 rounded-full blur-2xl group-hover:bg-unity-action/20 transition-all">
+            <div class="max-w-6xl mx-auto">
+                <!-- Row 1: 3 Grid Items -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Feature Item 1 -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-check-circle text-xl"></i>
+                        </div>
+                        <span class="text-lg text-gray-200 font-medium">Precise alignment to the grid</span>
                     </div>
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-unity-action/20 text-unity-action mb-4">
-                        <i class="fa-solid fa-magnet text-xl"></i>
+
+                    <!-- Feature Item 2 -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-check-circle text-xl"></i>
+                        </div>
+                        <span class="text-lg text-gray-200 font-medium">Automatic snapping</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Smart Snapping System</h3>
-                    <p class="text-gray-400">Snap objects to each other, surfaces, or custom grids with millimeter
-                        precision.</p>
+
+                    <!-- Feature Item 3 -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-check-circle text-xl"></i>
+                        </div>
+                        <span class="text-lg text-gray-200 font-medium">Adjustable grid size and spacing</span>
+                    </div>
                 </div>
 
-                <!-- Feature 2 -->
-                <div
-                    class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
-                    <div
-                        class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all">
+                <!-- Row 2: 1 Centered Item -->
+                <div class="flex justify-center">
+                    <div class="w-full md:max-w-lg flex items-center justify-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-yellow-500/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bolt text-xl"></i>
+                        </div>
+                        <span class="text-lg text-white font-semibold">Clean, fast, and user-friendly interface</span>
                     </div>
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-purple-500/20 text-purple-400 mb-4">
-                        <i class="fa-solid fa-layer-group text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Modular Architecture</h3>
-                    <p class="text-gray-400">Works perfectly with your prefab sets. Walls, floors, and props place
-                        instantly.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div
-                    class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
-                    <div
-                        class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all">
-                    </div>
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-blue-500/20 text-blue-400 mb-4">
-                        <i class="fa-solid fa-keyboard text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Shortcut Support</h3>
-                    <p class="text-gray-400">Work without lifting your hand from the mouse with fully customizable
-                        keyboard shortcuts.</p>
                 </div>
             </div>
         </div>
