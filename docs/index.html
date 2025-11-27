@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GridSnapper - Veybetter | Unity Level Design Tool</title>
-    <meta name="description" content="Accelerate your level design in Unity with GridSnapper. The ultimate alignment and modular design tool for indie developers.">
-    
+    <meta name="description"
+        content="GridSnapper – Fast and simple tool to snap, align, and organize UI elements on customizable grids in Unity.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts (Inter - Clean font similar to Unity UI) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -44,17 +46,20 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #202124; 
+            background: #202124;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #555; 
+            background: #555;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #777; 
+            background: #777;
         }
-        
+
         .hero-pattern {
             background-image: radial-gradient(#383838 1px, transparent 1px);
             background-size: 30px 30px;
@@ -66,6 +71,7 @@
         }
     </style>
 </head>
+
 <body class="bg-unity-dark text-gray-200 font-sans antialiased selection:bg-unity-accent selection:text-white">
 
     <!-- Navbar -->
@@ -74,18 +80,22 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-8 h-8 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-lg">
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-lg">
                         V
                     </div>
                     <span class="font-bold text-xl tracking-tight text-white">Veybetter</span>
                 </div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#features" class="hover:text-unity-action transition-colors px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                        <a href="#gallery" class="hover:text-unity-action transition-colors px-3 py-2 rounded-md text-sm font-medium">Screenshots</a>
-                        <a href="https://assetstore.unity.com" target="_blank" class="bg-unity-action hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded transition-all transform hover:scale-105 shadow-lg shadow-unity-action/20">
+                        <a href="#features"
+                            class="hover:text-unity-action transition-colors px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#gallery"
+                            class="hover:text-unity-action transition-colors px-3 py-2 rounded-md text-sm font-medium">Screenshots</a>
+                        <a href="https://assetstore.unity.com" target="_blank"
+                            class="bg-unity-action hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded transition-all transform hover:scale-105 shadow-lg shadow-unity-action/20">
                             <i class="fa-brands fa-unity mr-2"></i>View on Asset Store
                         </a>
                     </div>
@@ -93,19 +103,23 @@
 
                 <!-- Mobile menu button -->
                 <div class="-mr-2 flex md:hidden">
-                    <button onclick="toggleMenu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                    <button onclick="toggleMenu()" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-unity-panel border-b border-white/5">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#features" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Features</a>
-                <a href="#gallery" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Screenshots</a>
-                <a href="https://assetstore.unity.com" class="text-unity-action font-bold block px-3 py-2 rounded-md text-base">Buy Now</a>
+                <a href="#features"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#gallery"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Screenshots</a>
+                <a href="https://assetstore.unity.com"
+                    class="text-unity-action font-bold block px-3 py-2 rounded-md text-base">Buy Now</a>
             </div>
         </div>
     </nav>
@@ -113,36 +127,55 @@
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 hero-pattern opacity-10"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-transparent via-unity-dark to-unity-dark pointer-events-none"></div>
-        
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-transparent via-unity-dark to-unity-dark pointer-events-none">
+        </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-unity-action uppercase rounded-full bg-unity-action/10 border border-unity-action/20">
+            <div
+                class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-unity-action uppercase rounded-full bg-unity-action/10 border border-unity-action/20">
                 New on Unity Asset Store
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">GridSnapper</span>
             </h1>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                Complete your level design in Unity in seconds. Simply drag, drop, and align your modular assets with perfect precision.
+                GridSnapper – Fast and simple tool to snap, align, and organize UI elements on customizable grids in
+                Unity.
             </p>
             <div class="mt-10 flex justify-center gap-4">
-                <a href="https://assetstore.unity.com" target="_blank" class="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-unity-action hover:bg-teal-500 md:text-lg md:px-10 transition-all shadow-lg shadow-unity-action/25 hover:shadow-unity-action/40">
-                    <i class="fa-solid fa-cart-shopping mr-2"></i> Buy Now - $19.99
+                <a href="https://assetstore.unity.com" target="_blank"
+                    class="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-unity-action hover:bg-teal-500 md:text-lg md:px-10 transition-all shadow-lg shadow-unity-action/25 hover:shadow-unity-action/40 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl shadow-sm">
+                        -30%</div>
+                    <i class="fa-solid fa-cart-shopping mr-2"></i>
+                    <div class="flex flex-col items-start leading-none ml-1">
+                        <span class="text-xs text-white/70 line-through font-normal">$15.00</span>
+                        <span class="font-bold">Buy Now - $10.50</span>
+                    </div>
                 </a>
-                <a href="#gallery" class="flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-md text-gray-300 bg-unity-panel hover:bg-unity-light md:text-lg md:px-10 transition-all">
+                <a href="#gallery"
+                    class="flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-md text-gray-300 bg-unity-panel hover:bg-unity-light md:text-lg md:px-10 transition-all">
                     <i class="fa-solid fa-images mr-2"></i> View Gallery
                 </a>
             </div>
-            
+
             <!-- Hero Image Placeholder / Video -->
-            <div class="mt-16 relative rounded-xl overflow-hidden shadow-2xl border border-white/10 max-w-5xl mx-auto group">
-                <div class="absolute inset-0 bg-gradient-to-t from-unity-dark via-transparent to-transparent opacity-60"></div>
+            <div
+                class="mt-16 relative rounded-xl overflow-hidden shadow-2xl border border-white/10 max-w-5xl mx-auto group">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-unity-dark via-transparent to-transparent opacity-60">
+                </div>
                 <!-- Main Visual -->
-                <img src="img/sc2.png" alt="GridSnapper Interface" class="w-full object-cover group-hover:scale-105 transition-transform duration-700">
-                
+                <img src="img/sc2.png" alt="GridSnapper Interface"
+                    class="w-full object-cover group-hover:scale-105 transition-transform duration-700">
+
                 <!-- Play Button Overlay (Optional) -->
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div
+                        class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
                         <i class="fa-solid fa-play text-white ml-1"></i>
                     </div>
                 </div>
@@ -165,33 +198,48 @@
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Feature 1 -->
-                <div class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-unity-action/10 rounded-full blur-2xl group-hover:bg-unity-action/20 transition-all"></div>
-                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-unity-action/20 text-unity-action mb-4">
+                <div
+                    class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
+                    <div
+                        class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-unity-action/10 rounded-full blur-2xl group-hover:bg-unity-action/20 transition-all">
+                    </div>
+                    <div
+                        class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-unity-action/20 text-unity-action mb-4">
                         <i class="fa-solid fa-magnet text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Smart Snapping System</h3>
-                    <p class="text-gray-400">Snap objects to each other, surfaces, or custom grids with millimeter precision.</p>
+                    <p class="text-gray-400">Snap objects to each other, surfaces, or custom grids with millimeter
+                        precision.</p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
-                     <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all"></div>
-                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-purple-500/20 text-purple-400 mb-4">
+                <div
+                    class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
+                    <div
+                        class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all">
+                    </div>
+                    <div
+                        class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-purple-500/20 text-purple-400 mb-4">
                         <i class="fa-solid fa-layer-group text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Modular Architecture</h3>
-                    <p class="text-gray-400">Works perfectly with your prefab sets. Walls, floors, and props place instantly.</p>
+                    <p class="text-gray-400">Works perfectly with your prefab sets. Walls, floors, and props place
+                        instantly.</p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
-                     <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
-                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-blue-500/20 text-blue-400 mb-4">
+                <div
+                    class="relative p-8 bg-unity-dark rounded-xl border border-white/5 hover:border-unity-action/50 transition-colors group">
+                    <div
+                        class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all">
+                    </div>
+                    <div
+                        class="w-12 h-12 inline-flex items-center justify-center rounded-lg bg-blue-500/20 text-blue-400 mb-4">
                         <i class="fa-solid fa-keyboard text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Shortcut Support</h3>
-                    <p class="text-gray-400">Work without lifting your hand from the mouse with fully customizable keyboard shortcuts.</p>
+                    <p class="text-gray-400">Work without lifting your hand from the mouse with fully customizable
+                        keyboard shortcuts.</p>
                 </div>
             </div>
         </div>
@@ -199,7 +247,7 @@
 
     <!-- Compatibility Bar -->
     <!-- <div id="compatibility" class="bg-black/30 py-8 border-b border-white/5"> -->
-        <!-- <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+    <!-- <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             <div class="flex items-center gap-2">
                 <i class="fa-brands fa-unity text-3xl"></i>
                 <span class="font-bold text-xl">Unity 2021+</span>
@@ -228,69 +276,93 @@
             <!-- Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
                 <!-- Screenshot Items (sc1...sc6) -->
-                
+
                 <!-- Item 1 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all" onclick="openLightbox(0)">
-                    <img src="img/sc2.png" alt="Grid Settings" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                    onclick="openLightbox(0)">
+                    <img src="img/sc2.png" alt="Grid Settings"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="fa-solid fa-expand text-white text-3xl drop-shadow-lg"></i>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
                         <p class="text-white text-sm font-medium">Grid Settings Window</p>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all" onclick="openLightbox(1)">
-                    <img src="img/sc1.png" alt="Snapping Tool" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                    onclick="openLightbox(1)">
+                    <img src="img/sc1.png" alt="Snapping Tool"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="fa-solid fa-expand text-white text-3xl drop-shadow-lg"></i>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
                         <p class="text-white text-sm font-medium">Automatic Alignment</p>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all" onclick="openLightbox(2)">
-                    <img src="img/sc6.png" alt="Modular Kit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                    onclick="openLightbox(2)">
+                    <img src="img/sc6.png" alt="Modular Kit"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="fa-solid fa-expand text-white text-3xl drop-shadow-lg"></i>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
                         <p class="text-white text-sm font-medium">Modular Building Mode</p>
                     </div>
                 </div>
 
                 <!-- Item 4 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all" onclick="openLightbox(3)">
-                    <img src="img/sc3.png" alt="Gizmos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                    onclick="openLightbox(3)">
+                    <img src="img/sc3.png" alt="Gizmos"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="fa-solid fa-expand text-white text-3xl drop-shadow-lg"></i>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
                         <p class="text-white text-sm font-medium">Custom Gizmo View</p>
                     </div>
                 </div>
 
                 <!-- Item 5 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all" onclick="openLightbox(4)">
-                    <img src="img/sc4.png" alt="Shortcuts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                    onclick="openLightbox(4)">
+                    <img src="img/sc4.png" alt="Shortcuts"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="fa-solid fa-expand text-white text-3xl drop-shadow-lg"></i>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
                         <p class="text-white text-sm font-medium">Shortcut Manager</p>
                     </div>
                 </div>
 
                 <!-- Item 6 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all" onclick="openLightbox(5)">
-                    <img src="img/sc5.png" alt="Performance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                    onclick="openLightbox(5)">
+                    <img src="img/sc5.png" alt="Performance"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="fa-solid fa-expand text-white text-3xl drop-shadow-lg"></i>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
                         <p class="text-white text-sm font-medium">Performance Statistics</p>
                     </div>
                 </div>
@@ -304,67 +376,81 @@
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-3xl font-bold text-white mb-6">Transform Your Workflow Today</h2>
             <p class="text-gray-400 mb-10 text-lg">
-                Join other developers saving time with GridSnapper. Download now and accelerate your level design process.
+                Join other developers saving time with GridSnapper. Download now and accelerate your level design
+                process.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://assetstore.unity.com" target="_blank" class="flex items-center justify-center px-8 py-4 bg-unity-action text-white rounded-lg font-bold text-lg hover:bg-teal-500 transition-all shadow-lg hover:shadow-unity-action/50 transform hover:-translate-y-1">
+                <a href="https://assetstore.unity.com" target="_blank"
+                    class="flex items-center justify-center px-8 py-4 bg-unity-action text-white rounded-lg font-bold text-lg hover:bg-teal-500 transition-all shadow-lg hover:shadow-unity-action/50 transform hover:-translate-y-1">
                     <i class="fa-brands fa-unity mr-2"></i> Buy on Asset Store
                 </a>
-                <a href="mailto:serdaryusuf19@gmail.com" class="flex items-center justify-center px-8 py-4 bg-transparent border border-gray-600 text-gray-300 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all">
-                    Contact Me
-                </a>
             </div>
-            <p class="mt-6 text-sm text-gray-500">30-day money-back guarantee. Requires Unity 2021.3 or higher.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-black py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-xs">
+                <div
+                    class="w-6 h-6 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-xs">
                     V
                 </div>
                 <span class="text-lg font-bold text-gray-200">Veybetter</span>
             </div>
-            
+
             <div class="text-gray-500 text-sm">
                 &copy; 2024 Veybetter. Indie Game Developer. "Unity" is a trademark of Unity Technologies.
             </div>
 
             <div class="flex space-x-6">
-                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-youtube text-xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-discord text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i
+                        class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i
+                        class="fa-brands fa-youtube text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i
+                        class="fa-brands fa-discord text-xl"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lightbox-modal opacity-0 select-none">
-        
+    <div id="lightbox"
+        class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lightbox-modal opacity-0 select-none">
+
         <!-- Close Button -->
-        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-4xl transition-colors z-50 focus:outline-none" onclick="closeLightboxBtn()">
+        <button
+            class="absolute top-6 right-6 text-white/70 hover:text-white text-4xl transition-colors z-50 focus:outline-none"
+            onclick="closeLightboxBtn()">
             &times;
         </button>
 
         <!-- Previous Button -->
-        <button id="prev-btn" class="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-all z-50 focus:outline-none" onclick="changeImage(-1)">
+        <button id="prev-btn"
+            class="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-all z-50 focus:outline-none"
+            onclick="changeImage(-1)">
             <i class="fa-solid fa-chevron-left text-3xl md:text-4xl"></i>
         </button>
 
         <!-- Next Button -->
-        <button id="next-btn" class="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-all z-50 focus:outline-none" onclick="changeImage(1)">
+        <button id="next-btn"
+            class="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-all z-50 focus:outline-none"
+            onclick="changeImage(1)">
             <i class="fa-solid fa-chevron-right text-3xl md:text-4xl"></i>
         </button>
 
         <!-- Image Container -->
-        <div class="relative max-w-7xl w-full max-h-[90vh] flex justify-center px-12 md:px-24" onclick="closeLightbox(event)">
-            <img id="lightbox-img" src="" alt="Fullscreen Screenshot" class="max-h-[85vh] w-auto object-contain rounded-md shadow-2xl border border-white/10">
+        <div class="relative max-w-7xl w-full max-h-[90vh] flex justify-center px-12 md:px-24"
+            onclick="closeLightbox(event)">
+            <img id="lightbox-img" src="" alt="Fullscreen Screenshot"
+                class="max-h-[85vh] w-auto object-contain rounded-md shadow-2xl border border-white/10">
         </div>
-        
+
         <!-- Caption -->
-        <div id="lightbox-caption" class="absolute bottom-6 left-0 right-0 text-center text-white text-lg font-medium tracking-wide drop-shadow-md"></div>
+        <div id="lightbox-caption"
+            class="absolute bottom-6 left-0 right-0 text-center text-white text-lg font-medium tracking-wide drop-shadow-md">
+        </div>
     </div>
 
     <script>
@@ -378,7 +464,7 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxCaption = document.getElementById('lightbox-caption');
-        
+
         let currentImageIndex = 0;
         let galleryItems = [];
 
@@ -391,23 +477,23 @@
             updateGalleryItems();
             currentImageIndex = index;
             updateLightboxContent();
-            
+
             lightbox.classList.remove('hidden');
             // Small delay to allow display:block to apply before opacity transition
             setTimeout(() => {
                 lightbox.classList.remove('opacity-0');
             }, 10);
-            
+
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
 
         function updateLightboxContent() {
             if (galleryItems.length === 0) return;
-            
+
             const item = galleryItems[currentImageIndex];
             const img = item.querySelector('img');
             const caption = item.querySelector('p').innerText;
-            
+
             lightboxImg.src = img.src;
             lightboxCaption.innerText = caption;
         }
@@ -416,14 +502,14 @@
             // Stop propagation if triggered from click inside image container
             if (!lightbox.classList.contains('hidden')) {
                 currentImageIndex += direction;
-                
+
                 // Loop navigation
                 if (currentImageIndex >= galleryItems.length) {
                     currentImageIndex = 0;
                 } else if (currentImageIndex < 0) {
                     currentImageIndex = galleryItems.length - 1;
                 }
-                
+
                 updateLightboxContent();
             }
         }
@@ -444,7 +530,7 @@
         }
 
         // Keyboard Navigation
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (lightbox.classList.contains('hidden')) return;
 
             if (event.key === "Escape") {
@@ -457,4 +543,5 @@
         });
     </script>
 </body>
+
 </html>
