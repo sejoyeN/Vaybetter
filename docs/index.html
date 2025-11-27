@@ -69,13 +69,30 @@
         .lightbox-modal {
             transition: opacity 0.3s ease;
         }
+
+        /* --- Scroll Reveal Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delay classes will be added via JS or manual classes if needed */
+        .delay-100 { transition-delay: 200ms; }
+        .delay-200 { transition-delay: 300ms; }
+        .delay-300 { transition-delay: 400ms; }
     </style>
 </head>
 
 <body class="bg-unity-dark text-gray-200 font-sans antialiased selection:bg-unity-accent selection:text-white">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-unity-dark/90 backdrop-blur-md border-b border-white/10">
+    <nav class="fixed w-full z-50 bg-unity-dark/90 backdrop-blur-md border-b border-white/10 reveal active">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
@@ -84,7 +101,7 @@
                         class="w-8 h-8 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-lg">
                         V
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-white">Vaybetter</span>
+                    <span class="font-bold text-xl tracking-tight text-white">Veybetter</span>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -132,42 +149,45 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div
-                class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-unity-action uppercase rounded-full bg-unity-action/10 border border-unity-action/20">
-                New on Unity Asset Store
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">GridsSapper - UI</span>
-            </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                GridsSapper - UI | Fast and simple tool to snap, align, and organize UI elements on customizable grids in
-                Unity.
-            </p>
-            <div class="mt-10 flex justify-center gap-4">
-                <a href="https://assetstore.unity.com" target="_blank"
-                    class="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-unity-action hover:bg-teal-500 md:text-lg md:px-10 transition-all shadow-lg shadow-unity-action/25 hover:shadow-unity-action/40 relative overflow-hidden group">
-                    <div
-                        class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl shadow-sm">
-                        -30%</div>
-                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                    <div class="flex flex-col items-start leading-none ml-1">
-                        <span class="text-xs text-white/70 line-through font-normal">$15.00</span>
-                        <span class="font-bold">Buy Now - $10.50</span>
-                    </div>
-                </a>
-                <a href="#gallery"
-                    class="flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-md text-gray-300 bg-unity-panel hover:bg-unity-light md:text-lg md:px-10 transition-all">
-                    <i class="fa-solid fa-images mr-2"></i> View Gallery
-                </a>
+            <div class="reveal">
+                <div
+                    class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-unity-action uppercase rounded-full bg-unity-action/10 border border-unity-action/20">
+                    New on Unity Asset Store
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">GridsSapper - UI</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
+                    GridsSapper - UI | Fast and simple tool to snap, align, and organize UI elements on customizable grids in
+                    Unity.
+                </p>
+                <div class="mt-10 flex justify-center gap-4">
+                    <a href="https://assetstore.unity.com" target="_blank"
+                        class="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-unity-action hover:bg-teal-500 md:text-lg md:px-10 transition-all shadow-lg shadow-unity-action/25 hover:shadow-unity-action/40 relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl shadow-sm">
+                            -30%</div>
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+                        <div class="flex flex-col items-start leading-none ml-1">
+                            <span class="text-xs text-white/70 line-through font-normal">$15.00</span>
+                            <span class="font-bold">Buy Now - $10.50</span>
+                        </div>
+                    </a>
+                    <a href="#gallery"
+                        class="flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-md text-gray-300 bg-unity-panel hover:bg-unity-light md:text-lg md:px-10 transition-all">
+                        <i class="fa-solid fa-images mr-2"></i> View Gallery
+                    </a>
+                </div>
             </div>
 
             <!-- Hero Image Placeholder / Video -->
             <div
-                class="mt-16 relative rounded-xl overflow-hidden shadow-2xl border border-white/10 max-w-5xl mx-auto group">
+                class="mt-16 relative rounded-xl overflow-hidden shadow-2xl border border-white/10 max-w-5xl mx-auto group reveal delay-200">
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-unity-dark via-transparent to-transparent opacity-60">
                 </div>
                 <!-- Main Visual -->
+                <!-- LCP (Largest Contentful Paint) image should NOT be lazy loaded -->
                 <img src="img/sc2.png" alt="GridsSapper - UI Interface"
                     class="w-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
@@ -177,7 +197,7 @@
     <!-- Features Section -->
     <section id="features" class="py-20 bg-unity-panel border-y border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal">
                 <h2 class="text-base text-unity-action font-semibold tracking-wide uppercase">Features</h2>
                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
                     Everything You Need
@@ -191,7 +211,7 @@
                 <!-- Row 1: 3 Grid Items -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <!-- Feature Item 1 -->
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
+                    <div class="reveal flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-check-circle text-xl"></i>
                         </div>
@@ -199,7 +219,7 @@
                     </div>
 
                     <!-- Feature Item 2 -->
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
+                    <div class="reveal delay-100 flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-check-circle text-xl"></i>
                         </div>
@@ -207,7 +227,7 @@
                     </div>
 
                     <!-- Feature Item 3 -->
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
+                    <div class="reveal delay-200 flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-check-circle text-xl"></i>
                         </div>
@@ -216,7 +236,7 @@
                 </div>
 
                 <!-- Row 2: 1 Centered Item -->
-                <div class="flex justify-center">
+                <div class="flex justify-center reveal delay-300">
                     <div class="w-full md:max-w-lg flex items-center justify-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-yellow-500/40 hover:bg-white/5 transition-all duration-300 group">
                         <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-bolt text-xl"></i>
@@ -228,42 +248,25 @@
         </div>
     </section>
 
-    <!-- Compatibility Bar -->
-    <!-- <div id="compatibility" class="bg-black/30 py-8 border-b border-white/5"> -->
-    <!-- <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            <div class="flex items-center gap-2">
-                <i class="fa-brands fa-unity text-3xl"></i>
-                <span class="font-bold text-xl">Unity 2021+</span>
-            </div>
-            <div class="font-bold text-lg border border-white/20 px-3 py-1 rounded">Built-in RP</div>
-            <div class="font-bold text-lg border border-white/20 px-3 py-1 rounded">URP</div>
-            <div class="font-bold text-lg border border-white/20 px-3 py-1 rounded">HDRP</div>
-        </div>
-    </div> -->
-
     <!-- Gallery Section -->
     <section id="gallery" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-10">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10 reveal">
                 <div>
                     <h2 class="text-3xl font-extrabold text-white">Screenshots</h2>
                     <p class="mt-2 text-gray-400">See GridsSapper - UI in action.</p>
-                </div>
-                <div class="mt-4 md:mt-0">
-                    <span class="text-sm text-gray-500 bg-unity-panel px-3 py-1 rounded-full border border-white/10">
-                        <i class="fa-solid fa-camera mr-1"></i> 6 Images
-                    </span>
                 </div>
             </div>
 
             <!-- Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
                 <!-- Screenshot Items (sc1...sc6) -->
+                <!-- Added 'loading="lazy"' to all gallery images for performance -->
 
                 <!-- Item 1 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
                     onclick="openLightbox(0)">
-                    <img src="img/sc2.png" alt="Grid Settings"
+                    <img src="img/sc2.png" loading="lazy" alt="Grid Settings"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -276,9 +279,9 @@
                 </div>
 
                 <!-- Item 2 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal delay-100 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
                     onclick="openLightbox(1)">
-                    <img src="img/sc1.png" alt="Snapping Tool"
+                    <img src="img/sc1.png" loading="lazy" alt="Snapping Tool"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -291,9 +294,9 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal delay-200 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
                     onclick="openLightbox(2)">
-                    <img src="img/sc6.png" alt="Modular Kit"
+                    <img src="img/sc6.png" loading="lazy" alt="Modular Kit"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -306,9 +309,9 @@
                 </div>
 
                 <!-- Item 4 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
                     onclick="openLightbox(3)">
-                    <img src="img/sc3.png" alt="Gizmos"
+                    <img src="img/sc3.png" loading="lazy" alt="Gizmos"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -321,9 +324,9 @@
                 </div>
 
                 <!-- Item 5 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal delay-100 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
                     onclick="openLightbox(4)">
-                    <img src="img/sc4.png" alt="Shortcuts"
+                    <img src="img/sc4.png" loading="lazy" alt="Shortcuts"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -336,9 +339,9 @@
                 </div>
 
                 <!-- Item 6 -->
-                <div class="gallery-item group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal delay-200 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
                     onclick="openLightbox(5)">
-                    <img src="img/sc5.png" alt="Performance"
+                    <img src="img/sc5.png" loading="lazy" alt="Performance"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -355,7 +358,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-r from-unity-dark to-gray-900 border-t border-white/10">
+    <section class="py-20 bg-gradient-to-r from-unity-dark to-gray-900 border-t border-white/10 reveal">
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-3xl font-bold text-white mb-6">Transform Your Workflow Today</h2>
             <p class="text-gray-400 mb-10 text-lg">
@@ -380,11 +383,11 @@
                     class="w-6 h-6 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-xs">
                     V
                 </div>
-                <span class="text-lg font-bold text-gray-200">Vaybetter</span>
+                <span class="text-lg font-bold text-gray-200">Veybetter</span>
             </div>
 
             <div class="text-gray-500 text-sm">
-                &copy; 2024 Vaybetter. Indie Game Developer. "Unity" is a trademark of Unity Technologies.
+                &copy; 2024 Veybetter. Indie Game Developer. "Unity" is a trademark of Unity Technologies.
             </div>
         </div>
     </footer>
@@ -515,11 +518,28 @@
                 changeImage(-1);
             }
         });
+
+        // --- Intersection Observer for Scroll Animations ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: observer.unobserve(entry.target); // to animate only once
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of element is visible
+                rootMargin: "0px 0px -50px 0px" // Slight offset from bottom
+            });
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        });
     </script>
 </body>
 
 </html>
-
-
-
-
