@@ -17,8 +17,8 @@
     <!-- Google Fonts (Inter - Clean font) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- GridSnapper Icon (Favicon için - Yerel yol) -->
-    <link rel="icon" type="image/png" href="img/icon_gridsnapper_160x160.png">
+    <!-- Medieval Alchemist Icon (Favicon için - Güncellendi) -->
+    <link rel="icon" type="image/png" href="MA Icon 256x256.png">
 
 
     <script>
@@ -99,6 +99,38 @@
         .delay-300 {
             transition-delay: 300ms;
         }
+        
+        /* GridSnapper Preview Boyut Sabitleme */
+        .gridsnapper-preview {
+            width: 420px;
+            height: 280px;
+            max-width: 100%; /* Mobil uyumluluk için */
+            object-fit: contain; /* Görselin tamamını göstermek için */
+        }
+        
+        /* Medieval Alchemist Banner Boyut Sabitleme */
+        .ma-banner {
+             width: 420px;
+            height: 280px;
+            max-width: 100%; /* Mobil uyumluluk için */
+            object-fit: cover; /* Kartın boyutuna uygun doldurmak için */
+            margin: 0 auto; /* Ortalamak için */
+        }
+
+        /* Yeni Vaybetter Logo Stili (Gradient V harfi) */
+        .vaybetter-logo-v {
+            /* Başlık font büyüklüğüne yakın bir değer */
+            font-size: 2rem; 
+            font-weight: 800; /* Extra bold */
+            line-height: 1; /* Satır yüksekliği 1 */
+            
+            /* Gradient uygulama */
+            background-image: linear-gradient(to right, #34C759, #007AFF); /* Yeşil'den Mavi'ye */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback */
+        }
     </style>
 </head>
 
@@ -108,11 +140,10 @@
     <nav class="fixed w-full z-50 bg-theme-dark/90 backdrop-blur-md border-b border-white/10 reveal active">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
+                <!-- Logo (Gradient V harfi olarak güncellendi) -->
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <!-- Updated: Logo yerine GridSnapper 160x160 ikon (Vaybetter için) -->
-                    <img src="img/icon_gridsnapper_160x160.png" alt="Vaybetter Logo"
-                        class="w-8 h-8 rounded text-white flex items-center justify-center font-bold text-lg">
+                    <!-- PNG İkon yerine Gradient V Harfi -->
+                    <span class="vaybetter-logo-v w-8 h-8 flex items-center justify-center -mb-1">V</span>
                     <span class="font-bold text-xl tracking-tight text-white">Vaybetter</span>
                 </div>
 
@@ -173,7 +204,9 @@
                     <!-- Product Card 1: Medieval Alchemist (Game) -->
                     <a href="#games" class="reveal delay-100 block text-left p-6 rounded-xl bg-theme-panel border border-white/10 hover:border-brand-orange transition-all duration-300 shadow-xl group cursor-pointer">
                         <div class="flex items-center gap-4 mb-4">
-                            <i class="fa-solid fa-flask-vial text-brand-orange text-4xl w-12 flex-shrink-0"></i>
+                            <!-- Medieval Alchemist Icon (Yeniden Eklendi) -->
+                            <img src="MA Icon 256x256.png" alt="Medieval Alchemist Icon" 
+                                class="w-12 h-12 flex-shrink-0 rounded-lg">
                             <div>
                                 <h2 class="text-3xl font-bold text-white group-hover:text-theme-action transition-colors">Medieval Alchemist</h2>
                                 <span class="text-sm font-semibold uppercase text-brand-orange">Game</span>
@@ -187,7 +220,7 @@
                     <!-- Product Card 2: GridSnapper (Unity Tool) -->
                     <a href="#tools" class="reveal delay-200 block text-left p-6 rounded-xl bg-theme-panel border border-white/10 hover:border-theme-action transition-all duration-300 shadow-xl group cursor-pointer">
                         <div class="flex items-center gap-4 mb-4">
-                            <!-- Updated: GridSnapper 160x160 ikonunu buraya ekleyelim -->
+                            <!-- GridSnapper 160x160 ikonunu buraya ekleyelim -->
                             <img src="img/icon_gridsnapper_160x160.png" alt="GridSnapper Icon" 
                                 class="w-12 h-12 flex-shrink-0 rounded-lg">
                             <div>
@@ -275,10 +308,15 @@
             <!-- Medieval Alchemist Game Card (Single Game Card) -->
             <div class="max-w-4xl mx-auto">
                 <div class="reveal bg-theme-dark rounded-xl shadow-2xl overflow-hidden border border-white/10 group hover:border-brand-orange transition-all">
-                    <!-- Game Theme Visual -->
-                    <img src="https://placehold.co/1000x400/3A3A3C/FFFFFF?text=Medieval+Alchemist+Game+Preview" 
-                         alt="Medieval Alchemist Game Preview" loading="lazy"
-                         class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+                    
+                    <!-- Game Theme Visual (MA Banner 420x280.png ile güncellendi) -->
+                    <div class="flex justify-center p-4 bg-theme-dark">
+                        <img src="MA Banner 420x280.png" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/420x280/3A3A3C/FFFFFF?text=Medieval+Alchemist+Game+Preview';" 
+                             alt="Medieval Alchemist Game Preview Banner" loading="lazy"
+                             class="ma-banner rounded-lg transition-transform duration-500 group-hover:scale-[1.02]">
+                    </div>
+
                     <div class="p-6 md:p-8">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-2xl md:text-3xl font-bold text-white">Medieval Alchemist</h3>
@@ -318,7 +356,7 @@
             <!-- GridSnapper Tool Card (Hero Visual) -->
             <div class="max-w-6xl mx-auto reveal delay-100 mb-16">
                  <div
-                    class="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 group bg-theme-panel">
+                    class="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 group bg-theme-panel flex justify-center items-center">
                     <!-- Text Overlay -->
                     <div class="absolute inset-0 z-10 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 to-transparent">
                         <h3 class="text-4xl font-extrabold text-white mb-2">GridSnapper - UI</h3>
@@ -330,12 +368,11 @@
                             View Detailed Features <i class="fa-solid fa-angle-right ml-2"></i>
                         </a>
                     </div>
-                    <!-- Visual -->
-                    <!-- Updated: GridSnapper 420x280 Banner görseli buraya eklendi -->
+                    <!-- Visual (Boyut sınırlaması eklendi) -->
                     <img src="img/banner_gridsnapper_420x280.png"
-                        onerror="this.onerror=null;this.src='https://placehold.co/1280x720/2C2C2E/FFFFFF?text=GridSnapper+UI+Preview';" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/420x280/2C2C2E/FFFFFF?text=GridSnapper+UI+Preview';" 
                         alt="GridSnapper - UI Interface"
-                        class="w-full object-cover group-hover:opacity-80 transition-opacity duration-700 h-96">
+                        class="gridsnapper-preview object-cover group-hover:opacity-80 transition-opacity duration-700">
                 </div>
             </div>
 
@@ -519,9 +556,8 @@
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <!-- Updated: Footer logosunu da GridSnapper ikonu ile güncelleyelim -->
-                <img src="img/icon_gridsnapper_160x160.png" alt="Vaybetter Logo"
-                    class="w-6 h-6 rounded text-white flex items-center justify-center font-bold text-xs">
+                <!-- Footer logosunu Gradient V harfi ile güncelleyelim -->
+                <span class="vaybetter-logo-v w-6 h-6 flex items-center justify-center -mb-1">V</span>
                 <span class="text-lg font-bold text-gray-200">Vaybetter</span>
             </div>
 
