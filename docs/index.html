@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GridSnapper - UI | Vaybetter | Unity Level Design Tool</title>
+    <title>Vaybetter | Game Development & Unity Tools</title>
     <meta name="description"
-        content="GridSnapper - UI | Fast and simple tool to snap, align, and organize UI elements on customizable grids in Unity.">
+        content="Vaybetter - Independent publisher focused on high-quality tools (GridSnapper) and engaging indie games (Medieval Alchemist).">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts (Inter - Clean font similar to Unity UI) -->
+    <!-- Google Fonts (Inter - Clean font) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <script>
@@ -22,15 +22,16 @@
             theme: {
                 extend: {
                     colors: {
-                        unity: {
-                            dark: '#202124',    // Unity Editor Background
-                            panel: '#2a2a2a',   // Inspector Panel
-                            light: '#383838',   // Button/Input Background
-                            accent: '#2196F3',  // Unity Blue
-                            action: '#00C09B',  // Asset Store Green/Teal
+                        // Dark theme colors
+                        theme: {
+                            dark: '#1C1C1E', // Dark Background
+                            panel: '#2C2C2E', // Panel Background
+                            light: '#3A3A3C', // Light Input/Button Background
+                            accent: '#007AFF', // Blue Accent
+                            action: '#34C759', // Green Action Color
                         },
                         brand: {
-                            orange: '#F57D33', // Asset Store Orange (Alternative)
+                            orange: '#FF9500',
                         }
                     },
                     fontFamily: {
@@ -48,7 +49,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #202124;
+            background: #1C1C1E;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -61,7 +62,7 @@
         }
 
         .hero-pattern {
-            background-image: radial-gradient(#383838 1px, transparent 1px);
+            background-image: radial-gradient(#3A3A3C 1px, transparent 1px);
             background-size: 30px 30px;
         }
 
@@ -82,39 +83,47 @@
             transform: translateY(0);
         }
 
-        /* Staggered delay classes will be added via JS or manual classes if needed */
-        .delay-100 { transition-delay: 200ms; }
-        .delay-200 { transition-delay: 300ms; }
-        .delay-300 { transition-delay: 400ms; }
+        /* Staggered delay classes */
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
     </style>
 </head>
 
-<body class="bg-unity-dark text-gray-200 font-sans antialiased selection:bg-unity-accent selection:text-white">
+<body class="bg-theme-dark text-gray-200 font-sans antialiased selection:bg-theme-accent selection:text-white">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-unity-dark/90 backdrop-blur-md border-b border-white/10 reveal active">
+    <nav class="fixed w-full z-50 bg-theme-dark/90 backdrop-blur-md border-b border-white/10 reveal active">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <div
-                        class="w-8 h-8 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-lg">
+                        class="w-8 h-8 bg-gradient-to-br from-theme-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-lg">
                         V
                     </div>
                     <span class="font-bold text-xl tracking-tight text-white">Vaybetter</span>
                 </div>
 
-                <!-- Desktop Menu -->
+                <!-- Desktop Menu (ABOUT, GAMES, UNITY TOOLS, CONTACT) -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#features"
-                            class="hover:text-unity-action transition-colors px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                        <a href="#gallery"
-                            class="hover:text-unity-action transition-colors px-3 py-2 rounded-md text-sm font-medium">Screenshots</a>
-                        <a href="https://assetstore.unity.com" target="_blank"
-                            class="bg-unity-action hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded transition-all transform hover:scale-105 shadow-lg shadow-unity-action/20">
-                            <i class="fa-brands fa-unity mr-2"></i>View on Asset Store
-                        </a>
+                        <a href="#about"
+                            class="hover:text-brand-orange transition-colors px-3 py-2 rounded-md text-sm font-medium">ABOUT</a>
+                        <a href="#games"
+                            class="hover:text-theme-action transition-colors px-3 py-2 rounded-md text-sm font-medium">GAMES</a>
+                        <a href="#tools"
+                            class="hover:text-theme-action transition-colors px-3 py-2 rounded-md text-sm font-medium">UNITY TOOLS</a>
+                        <a href="#contact"
+                            class="hover:text-theme-action transition-colors px-3 py-2 rounded-md text-sm font-medium">CONTACT</a>
                     </div>
                 </div>
 
@@ -129,144 +138,256 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-unity-panel border-b border-white/5">
+        <div id="mobile-menu" class="hidden md:hidden bg-theme-panel border-b border-white/5">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#features"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Features</a>
-                <a href="#gallery"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Screenshots</a>
-                <a href="https://assetstore.unity.com"
-                    class="text-unity-action font-bold block px-3 py-2 rounded-md text-base">Buy Now</a>
+                <a href="#about"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">ABOUT</a>
+                <a href="#games"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">GAMES</a>
+                <a href="#tools"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">UNITY TOOLS</a>
+                <a href="#contact"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-30 lg:pb-32 overflow-hidden">
+    <!-- Hero Section (General Publisher Intro + Products) -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-black">
         <div class="absolute inset-0 hero-pattern opacity-10"></div>
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-transparent via-unity-dark to-unity-dark pointer-events-none">
-        </div>
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="reveal">
-                <div
-                    class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-unity-action uppercase rounded-full bg-unity-action/10 border border-unity-action/20">
-                    New on Unity Asset Store
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">GridSnapper - UI</span>
+                <!-- Updated Title -->
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-theme-action to-blue-400">Vaybetter</span> Products
                 </h1>
-                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                    GridSnapper - UI | Fast and simple tool to snap, align, and organize UI elements on customizable grids in
-                    Unity.
+                <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-400 mb-12">
+                    We create engaging indie game experiences and develop efficient, high-quality tools for Unity developers.
                 </p>
-                <div class="mt-10 flex justify-center gap-4">
-                    <a href="https://assetstore.unity.com" target="_blank"
-                        class="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-unity-action hover:bg-teal-500 md:text-lg md:px-10 transition-all shadow-lg shadow-unity-action/25 hover:shadow-unity-action/40 relative overflow-hidden group">
-                        <div
-                            class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-bl shadow-sm">
-                            -30%</div>
-                        <i class="fa-solid fa-cart-shopping mr-2"></i>
-                        <div class="flex flex-col items-start leading-none ml-1">
-                            <span class="text-xs text-white/70 line-through font-normal">$15.00</span>
-                            <span class="font-bold">Buy Now - $10.50</span>
+                
+                <!-- Product Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Product Card 1: Medieval Alchemist (Game) -->
+                    <a href="#games" class="reveal delay-100 block text-left p-6 rounded-xl bg-theme-panel border border-white/10 hover:border-theme-action transition-all duration-300 shadow-xl group cursor-pointer">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fa-solid fa-flask-vial text-brand-orange text-4xl w-12 flex-shrink-0"></i>
+                            <div>
+                                <h2 class="text-3xl font-bold text-white group-hover:text-theme-action transition-colors">Medieval Alchemist</h2>
+                                <span class="text-sm font-semibold uppercase text-brand-orange">Game</span>
+                            </div>
                         </div>
+                        <p class="text-gray-400">
+                            Our upcoming simulation and trading game set in a unique medieval world.
+                        </p>
                     </a>
-                    <a href="#gallery"
-                        class="flex items-center justify-center px-8 py-4 border border-white/10 text-base font-medium rounded-md text-gray-300 bg-unity-panel hover:bg-unity-light md:text-lg md:px-10 transition-all">
-                        <i class="fa-solid fa-images mr-2"></i> View Gallery
+                    
+                    <!-- Product Card 2: GridSnapper (Unity Tool) -->
+                    <a href="#tools" class="reveal delay-200 block text-left p-6 rounded-xl bg-theme-panel border border-white/10 hover:border-theme-action transition-all duration-300 shadow-xl group cursor-pointer">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="fa-solid fa-ruler-combined text-theme-action text-4xl w-12 flex-shrink-0"></i>
+                            <div>
+                                <h2 class="text-3xl font-bold text-white group-hover:text-theme-action transition-colors">GridSnapper - UI</h2>
+                                <span class="text-sm font-semibold uppercase text-theme-action">Unity Tool</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">
+                            The essential Unity asset for flawless UI alignment and grid management.
+                        </p>
                     </a>
                 </div>
-            </div>
-
-            <!-- Hero Image Placeholder / Video -->
-            <div
-                class="mt-16 relative rounded-xl overflow-hidden shadow-2xl border border-white/10 max-w-5xl mx-auto group reveal delay-200">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-unity-dark via-transparent to-transparent opacity-60">
-                </div>
-                <!-- Main Visual -->
-                <!-- LCP (Largest Contentful Paint) image should NOT be lazy loaded -->
-                <img src="img/sc2.png" alt="GridSnapper - UI Interface"
-                    class="w-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-unity-panel border-y border-white/5">
+    <!-- ABOUT VAYBETTER PUBLISHER (1. Section) -->
+    <section id="about" class="py-20 bg-theme-dark border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Block -->
+                <div class="reveal">
+                    <h2 class="text-base text-brand-orange font-semibold tracking-wide uppercase">ABOUT US</h2>
+                    <p class="mt-2 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                        Our Focus: Quality Code & User Experience
+                    </p>
+                    <p class="mt-6 text-lg text-gray-400">
+                        Vaybetter was founded with the mission to add value to the Unity ecosystem. Our core purpose is to offer tools that accelerate game development and to create innovative experiences in our own game projects.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-400">
+                        Professionalism, clean code structure, and detailed documentation are our primary priorities for all Unity Asset Store submissions. Our publishing identity is built on reliability and continuous customer support.
+                    </p>
+                    <div class="mt-8">
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-6 py-3 border border-brand-orange text-base font-medium rounded-md text-brand-orange hover:bg-brand-orange/10 transition-colors">
+                            <i class="fa-solid fa-envelope mr-2"></i> Get in Touch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Metrics / Summary Card -->
+                <div class="reveal delay-200 p-8 rounded-xl bg-theme-panel border border-white/10 shadow-xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 border-b border-white/5 pb-4">Our Experience</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-screwdriver-wrench text-brand-orange text-3xl w-10"></i>
+                            <div class="ml-4">
+                                <p class="text-xl font-bold text-white">Tool Development</p>
+                                <p class="text-gray-400">Streamlining Unity workflow with bespoke assets.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-gamepad text-brand-orange text-3xl w-10"></i>
+                            <div class="ml-4">
+                                <p class="text-xl font-bold text-white">Indie Game Creation</p>
+                                <p class="text-gray-400">Developing and publishing small-scale, innovative games.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-headset text-brand-orange text-3xl w-10"></i>
+                            <div class="ml-4">
+                                <p class="text-xl font-bold text-white">Dedicated Support</p>
+                                <p class="text-gray-400">Rapid response and bug-fixing for all assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAMES SECTION (2. Section) -->
+    <section id="games" class="py-20 bg-theme-panel border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-base text-unity-action font-semibold tracking-wide uppercase">Features</h2>
+                <h2 class="text-base text-theme-action font-semibold tracking-wide uppercase">GAMES</h2>
                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
-                    Everything You Need
+                    Medieval Alchemist: Coming Soon
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
-                    A comprehensive toolset designed to solve your alignment problems instantly.
+                    Our own games and prototypes showcase our creativity and technical expertise.
                 </p>
             </div>
 
+            <!-- Medieval Alchemist Game Card (Single Game Card) -->
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal bg-theme-dark rounded-xl shadow-2xl overflow-hidden border border-white/10 group hover:border-brand-orange transition-all">
+                    <!-- Game Theme Visual -->
+                    <img src="https://placehold.co/1000x400/3A3A3C/FFFFFF?text=Medieval+Alchemist+Game+Preview" 
+                         alt="Medieval Alchemist Game Preview" loading="lazy"
+                         class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+                    <div class="p-6 md:p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white">Medieval Alchemist</h3>
+                            <!-- Updated Status Tag to Coming Soon -->
+                            <span class="inline-block text-sm font-semibold px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange border border-brand-orange/50">COMING SOON</span>
+                        </div>
+                        
+                        <p class="text-gray-400 text-base mb-6">
+                            Medieval Alchemist offers a unique simulation and trading experience set in a deep, engaging Medieval world. Prepare your potions and manage your trade routes.
+                        </p>
+                        
+                        <!-- Link to Steam Page -->
+                        <a href="https://store.steampowered.com/app/2018700/Medieval_Alchemist/" target="_blank"
+                            class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-brand-orange hover:bg-brand-orange/80 transition-colors shadow-md shadow-brand-orange/30">
+                            Wishlist on Steam <i class="fa-brands fa-steam-symbol ml-2 text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UNITY TOOLS SECTION (3. Section) -->
+    <section id="tools" class="py-20 bg-theme-dark border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-base text-brand-orange font-semibold tracking-wide uppercase">UNITY TOOLS</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Our Featured Asset: GridSnapper - UI
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
+                    Professional tools designed to accelerate your Unity development pipeline.
+                </p>
+            </div>
+
+            <!-- GridSnapper Tool Card (Hero Visual) -->
+            <div class="max-w-6xl mx-auto reveal delay-100 mb-16">
+                 <div
+                    class="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 group bg-theme-panel">
+                    <!-- Text Overlay -->
+                    <div class="absolute inset-0 z-10 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-4xl font-extrabold text-white mb-2">GridSnapper - UI</h3>
+                        <p class="text-lg text-gray-300 max-w-lg">
+                            The indispensable tool for flawless UI alignment and organization. Build your interfaces cleaner and faster.
+                        </p>
+                        <a href="#gallery"
+                            class="mt-4 inline-flex items-center justify-center px-6 py-3 self-start border border-theme-action text-base font-medium rounded-md text-theme-action hover:bg-theme-action/10 transition-colors">
+                            View Detailed Features <i class="fa-solid fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Visual -->
+                    <img src="https://placehold.co/1280x720/2C2C2E/FFFFFF?text=GridSnapper+UI+Preview" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/1280x720/2C2C2E/FFFFFF?text=GridSnapper+UI+Preview';" 
+                        alt="GridSnapper - UI Interface"
+                        class="w-full object-cover group-hover:opacity-80 transition-opacity duration-700 h-96">
+                </div>
+            </div>
+
+
+            <!-- GridSnapper Feature List -->
             <div class="max-w-6xl mx-auto">
-                <!-- Row 1: 3 Grid Items -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Feature Item 1 -->
-                    <div class="reveal flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
+                    <div
+                        class="reveal flex items-center gap-4 p-4 rounded-xl bg-theme-panel border border-white/5 hover:border-theme-action/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-theme-action/10 flex items-center justify-center text-theme-action group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-check-circle text-xl"></i>
                         </div>
-                        <span class="text-lg text-gray-200 font-medium">Precise alignment to the grid</span>
+                        <span class="text-lg text-gray-200 font-medium">Precise Grid Alignment</span>
                     </div>
 
                     <!-- Feature Item 2 -->
-                    <div class="reveal delay-100 flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
+                    <div
+                        class="reveal delay-100 flex items-center gap-4 p-4 rounded-xl bg-theme-panel border border-white/5 hover:border-theme-action/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-theme-action/10 flex items-center justify-center text-theme-action group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-check-circle text-xl"></i>
                         </div>
-                        <span class="text-lg text-gray-200 font-medium">Automatic snapping</span>
+                        <span class="text-lg text-gray-200 font-medium">Automatic Snapping</span>
                     </div>
 
                     <!-- Feature Item 3 -->
-                    <div class="reveal delay-200 flex items-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-unity-action/40 hover:bg-white/5 transition-all duration-300 group">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-unity-action/10 flex items-center justify-center text-unity-action group-hover:scale-110 transition-transform">
+                    <div
+                        class="reveal delay-200 flex items-center gap-4 p-4 rounded-xl bg-theme-panel border border-white/5 hover:border-theme-action/40 hover:bg-white/5 transition-all duration-300 group">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-theme-action/10 flex items-center justify-center text-theme-action group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-check-circle text-xl"></i>
                         </div>
-                        <span class="text-lg text-gray-200 font-medium">Adjustable grid size and spacing</span>
-                    </div>
-                </div>
-
-                <!-- Row 2: 1 Centered Item -->
-                <div class="flex justify-center reveal delay-300">
-                    <div class="w-full md:max-w-lg flex items-center justify-center gap-4 p-4 rounded-xl bg-unity-dark border border-white/5 hover:border-yellow-500/40 hover:bg-white/5 transition-all duration-300 group">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-bolt text-xl"></i>
-                        </div>
-                        <span class="text-lg text-white font-semibold">Clean, fast, and user-friendly interface</span>
+                        <span class="text-lg text-gray-200 font-medium">Customizable Grid Settings</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 relative">
+    <!-- Gallery Section (GridSnapper Screenshots) -->
+    <section id="gallery" class="py-20 relative bg-theme-panel">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-10 reveal">
                 <div>
-                    <h2 class="text-3xl font-extrabold text-white">Screenshots</h2>
-                    <p class="mt-2 text-gray-400">See GridSnapper - UI in action.</p>
+                    <h2 class="text-3xl font-extrabold text-white">GridSnapper Screenshots</h2>
+                    <p class="mt-2 text-gray-400">View the tool's functionality with visuals.</p>
                 </div>
             </div>
 
             <!-- Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
-                <!-- Screenshot Items (sc1...sc6) -->
-                <!-- Added 'loading="lazy"' to all gallery images for performance -->
-
-                <!-- Item 1 -->
-                <div class="gallery-item reveal group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <!-- Item 1 (6 items kept as requested) -->
+                <div class="gallery-item reveal group relative aspect-video bg-theme-dark rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-theme-action/20 transition-all"
                     onclick="openLightbox(0)">
-                    <img src="img/sc2.png" loading="lazy" alt="Grid Settings"
+                    <img src="https://placehold.co/800x450/3A3A3C/FFFFFF?text=Grid+Settings" loading="lazy"
+                        alt="Grid Settings"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -274,14 +395,15 @@
                     </div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p class="text-white text-sm font-medium">Customize Your Grid</p>
+                        <p class="text-white text-sm font-medium">Customize Grid Settings</p>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="gallery-item reveal delay-100 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal delay-100 group relative aspect-video bg-theme-dark rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-theme-action/20 transition-all"
                     onclick="openLightbox(1)">
-                    <img src="img/sc1.png" loading="lazy" alt="Snapping Tool"
+                    <img src="https://placehold.co/800x450/3A3A3C/FFFFFF?text=Snapping+Tool+In+Use" loading="lazy"
+                        alt="Snapping Tool"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -289,14 +411,15 @@
                     </div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p class="text-white text-sm font-medium">Drag & Drop UI Elements</p>
+                        <p class="text-white text-sm font-medium">Snapping Tool in Action</p>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="gallery-item reveal delay-200 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <div class="gallery-item reveal delay-200 group relative aspect-video bg-theme-dark rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-theme-action/20 transition-all"
                     onclick="openLightbox(2)">
-                    <img src="img/sc6.png" loading="lazy" alt="Modular Kit"
+                    <img src="https://placehold.co/800x450/3A3A3C/FFFFFF?text=Multiple+Modes" loading="lazy"
+                        alt="Modular Kit"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -304,14 +427,15 @@
                     </div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p class="text-white text-sm font-medium">Multiple Snap Modes</p>
+                        <p class="text-white text-sm font-medium">Multiple Snapping Modes</p>
                     </div>
                 </div>
 
-                <!-- Item 4 -->
-                <div class="gallery-item reveal group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <!-- Item 4 (Screenshot 4) -->
+                <div class="gallery-item reveal group relative aspect-video bg-theme-dark rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-theme-action/20 transition-all"
                     onclick="openLightbox(3)">
-                    <img src="img/sc3.png" loading="lazy" alt="Gizmos"
+                    <img src="https://placehold.co/800x450/3A3A3C/FFFFFF?text=Integration+Example+1" loading="lazy"
+                        alt="Integration Example 1"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -319,14 +443,15 @@
                     </div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p class="text-white text-sm font-medium">Adjustable Grid Size</p>
+                        <p class="text-white text-sm font-medium">UI Integration Example</p>
                     </div>
                 </div>
 
-                <!-- Item 5 -->
-                <div class="gallery-item reveal delay-100 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <!-- Item 5 (Screenshot 5) -->
+                <div class="gallery-item reveal delay-100 group relative aspect-video bg-theme-dark rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-theme-action/20 transition-all"
                     onclick="openLightbox(4)">
-                    <img src="img/sc4.png" loading="lazy" alt="Shortcuts"
+                    <img src="https://placehold.co/800x450/3A3A3C/FFFFFF?text=Integration+Example+2" loading="lazy"
+                        alt="Integration Example 2"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -334,14 +459,15 @@
                     </div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p class="text-white text-sm font-medium">Scene View Display Options</p>
+                        <p class="text-white text-sm font-medium">Responsive UI Layout</p>
                     </div>
                 </div>
 
-                <!-- Item 6 -->
-                <div class="gallery-item reveal delay-200 group relative aspect-video bg-unity-panel rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-unity-action/20 transition-all"
+                <!-- Item 6 (Screenshot 6) -->
+                <div class="gallery-item reveal delay-200 group relative aspect-video bg-theme-dark rounded-lg overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:shadow-theme-action/20 transition-all"
                     onclick="openLightbox(5)">
-                    <img src="img/sc5.png" loading="lazy" alt="Performance"
+                    <img src="https://placehold.co/800x450/3A3A3C/FFFFFF?text=Documentation+Preview" loading="lazy"
+                        alt="Documentation Preview"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -349,50 +475,64 @@
                     </div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p class="text-white text-sm font-medium">Create Your Own Custom Presets</p>
+                        <p class="text-white text-sm font-medium">Detailed Documentation Preview</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-r from-unity-dark to-gray-900 border-t border-white/10 reveal">
-        <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-3xl font-bold text-white mb-6">Transform Your Workflow Today</h2>
-            <p class="text-gray-400 mb-10 text-lg">
-                Join other developers saving time with GridSnapper - UI. Download now and accelerate your level design
-                process.
+
+    <!-- CONTACT SECTION (4. Section) -->
+    <section id="contact" class="py-20 bg-black border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center px-4 reveal">
+            <h2 class="text-base text-theme-action font-semibold tracking-wide uppercase">CONTACT</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                Get in Touch for Support
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://assetstore.unity.com" target="_blank"
-                    class="flex items-center justify-center px-8 py-4 bg-unity-action text-white rounded-lg font-bold text-lg hover:bg-teal-500 transition-all shadow-lg hover:shadow-unity-action/50 transform hover:-translate-y-1">
-                    <i class="fa-brands fa-unity mr-2"></i> Buy on Asset Store
-                </a>
+            <p class="mt-4 text-xl text-gray-400">
+                Contact us for support, collaboration offers, or general inquiries.
+            </p>
+            
+            <div class="mt-12 space-y-8">
+                <!-- Email -->
+                <div class="p-6 rounded-xl bg-theme-dark border border-white/10">
+                    <p class="text-lg font-medium text-gray-300 mb-2">General Inquiries & Technical Support</p>
+                    <a href="mailto:vaybetter@gmail.com" 
+                       class="text-2xl font-bold text-theme-action hover:text-theme-action/80 transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-envelope mr-3 text-3xl"></i> vaybetter@gmail.com
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-
+    <!-- END: CONTACT -->
+    
     <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-white/10">
+    <footer class="bg-theme-dark py-12 border-t border-white/10">
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
                 <div
-                    class="w-6 h-6 bg-gradient-to-br from-unity-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-xs">
+                    class="w-6 h-6 bg-gradient-to-br from-theme-action to-blue-500 rounded text-white flex items-center justify-center font-bold text-xs">
                     V
                 </div>
                 <span class="text-lg font-bold text-gray-200">Vaybetter</span>
             </div>
 
-            <div class="text-gray-500 text-sm">
-                &copy; 2024 Vaybetter. Indie Game Developer. "Unity" is a trademark of Unity Technologies.
+            <div class="text-gray-500 text-sm text-center md:text-left">
+                &copy; 2025 Vaybetter. All Rights Reserved. | Indie Game Developer & Tool Publisher.
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <!-- Legal Links -->
+                <a href="#about" class="text-gray-500 hover:text-gray-300 text-sm">Publisher Info</a>
+                <a href="#contact" class="text-gray-500 hover:text-gray-300 text-sm">Support</a>
             </div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
+    <!-- Lightbox Modal (Required for full-screen gallery view) -->
     <div id="lightbox"
         class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lightbox-modal opacity-0 select-none">
 
@@ -447,7 +587,8 @@
 
         // Initialize gallery items
         function updateGalleryItems() {
-            galleryItems = document.querySelectorAll('.gallery-item');
+            // Select 6 specific gallery items for GridSnapper
+            galleryItems = document.querySelectorAll('#gallery-grid .gallery-item');
         }
 
         function openLightbox(index) {
@@ -538,10 +679,11 @@
             reveals.forEach(reveal => {
                 observer.observe(reveal);
             });
+            
+            // Initial call to update gallery items
+            updateGalleryItems();
         });
     </script>
 </body>
 
 </html>
-
-
